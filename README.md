@@ -1,27 +1,33 @@
-# React + TypeScript + Vite
+# How to run:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I created this project with Vite; To run, run the following:
 
-Currently, two official plugins are available:
+> npm install && npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+From there you should navigate to the link outputted to see the result!
 
-## Expanding the ESLint configuration
+# Description:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This implements the component described by the take home prompt in 'Hive Frontend Take-Home Prompt.pdf'. This is a Dropdown select menu which can support both single and multi select, and is defined in DropdownMenu.tsx.
 
-- Configure the top-level `parserOptions` property like this:
+There are 3 simple parameters required to use it:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+1. defaultTitle: which is the default text before the list of selected options are shown
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. dropdownOptions: which are the list of possible options that can be selected within the dropdown
+
+3. singleselect: a boolean value defining whether the selected options should be constrained to only 1 (or can be many)
+
+# Room for Improvement + Additional Design Considerations
+
+Although the barebones of the component is implemented, if I had more time there are a few improvement I'd like to make to this component. These improvements are as follows:
+
+1. I would be enable the 'Select all' and 'Deselect all' buttons to change the appearance of the other dropdown menu option buttons. Currently all of the options are shown as selected/deselected when these buttons are clicked; however, I think it would make it easier for people to use if the checkboxes were updated accordingly too.
+
+2. I would lift the state of whether the checkboxes are checked or not out of the DropdownMenu component. Why would I do so? When this is done, users of the component can see which checkboxes have been checked and decide to take some action accordingly (i.e. filtering of a table outside of the DropdownMenu component, based on multiple selected options)
+
+3. Overall more aesthetically pleasing: I'd change the styling + alignment depending on where this component is used, and maybe have the options list down vertically as opposed to horizontally.
+
+# Final Notes
+
+Thank you for taking the time to read through my code; I really appreciate this exercise because it showed me where I'm at within my journey as a frontend engineer, and I feel like I learned a good amount from completing it. Have a nice day!
